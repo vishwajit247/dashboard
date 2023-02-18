@@ -1,9 +1,11 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script type="text/javascript" src="table_script.js"></script>
     <style type="text/CSS">
         .container{
@@ -29,6 +31,9 @@ table tr{
 table tr td:first-child::before{
     content: counter(sno);
 }
+h3{
+    text-align: center;
+}
 
 </style>
 </head>
@@ -39,102 +44,120 @@ table tr td:first-child::before{
         <div class="log_out"><a href="index.html"><input class="btn_out" type="submit" value="LogOut"></a></div>
         <div class="adm_wel">Welcome admin</div>
 
+        <h3>
+            <span>Search for Student Data</span>
+            <input type="search" placeholder="Search" class="form-control search-input" data-table="customers-list" />
+        </h3>
 
         <div id="wrapper">
-            <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=5px solid black
-                style="border-collapse:collapse;">
-                <tr>
-                    <th>S.No</th>
-                    <th>Name</th>
-                    <th>roll</th>
-                    <th>address</th>
-                    <th>Action</th>
-                </tr>
+            <table class="table table-bordered table-striped customers-list" align='center' cellspacing=2 cellpadding=5
+                id="data_table" border=5px solid black style="border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>roll</th>
+                        <th>address</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
 
-                <tr id="row1">
-                    <td class="count"></td>
-                    <td id="name_row1">admin</td>
-                    <td id="roll_row1">1</td>
-                    <td id="address_row1">admin</td>
-                    <td>
-                        <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
-                        <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
-                        <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
-                    </td>
-                </tr>
+                <tbody>
+                    <tr id="row1">
+                        <td class="count"></td>
+                        <td id="name_row1">admin</td>
+                        <td id="roll_row1">1</td>
+                        <td id="address_row1">admin</td>
+                        <td>
+                            <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                            <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                            <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+                        </td>
+                    </tr>
 
-                <tr id="row2">
-                    <td class="count"></td>
-                    <td id="name_row2">Vishwajit</td>
-                    <td id="roll_row2">22</td>
-                    <td id="address_row2">Nayagaon</td>
-                    <td>
-                        <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
-                        <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
-                        <input type="button" value="Delete" class="delete" onclick="delete_row('2')">
-                    </td>
-                </tr>
+                    <tr id="row2">
+                        <td class="count"></td>
+                        <td id="name_row2">Vishwajit</td>
+                        <td id="roll_row2">22</td>
+                        <td id="address_row2">Nayagaon</td>
+                        <td>
+                            <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                            <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                            <input type="button" value="Delete" class="delete" onclick="delete_row('2')">
+                        </td>
+                    </tr>
 
-                <tr id="row4">
-                    <td class="count"></td>
-                    <td id="name_row3">user</td>
-                    <td id="roll_row3">20</td>
-                    <td id="address_row3">Kolkata</td>
-                    <td>
-                        <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
-                        <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
-                        <input type="button" value="Delete" class="delete" onclick="delete_row('3')">
-                    </td>
-                </tr>
+                    <tr id="row4">
+                        <td class="count"></td>
+                        <td id="name_row3">user</td>
+                        <td id="roll_row3">20</td>
+                        <td id="address_row3">Kolkata</td>
+                        <td>
+                            <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                            <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                            <input type="button" value="Delete" class="delete" onclick="delete_row('3')">
+                        </td>
+                    </tr>
 
-                <tr id="row4">
-                    <td class="count"></td>
-                    <td id="name_row4">user1</td>
-                    <td id="roll_row4">18</td>
-                    <td id="address_row4">Patna</td>
-                    <td>
-                        <input type="button" id="edit_button4" value="Edit" class="edit" onclick="edit_row('4')">
-                        <input type="button" id="save_button4" value="Save" class="save" onclick="save_row('4')">
-                        <input type="button" value="Delete" class="delete" onclick="delete_row('4')">
-                    </td>
-                </tr>
+                    <tr id="row4">
+                        <td class="count"></td>
+                        <td id="name_row4">user1</td>
+                        <td id="roll_row4">18</td>
+                        <td id="address_row4">Patna</td>
+                        <td>
+                            <input type="button" id="edit_button4" value="Edit" class="edit" onclick="edit_row('4')">
+                            <input type="button" id="save_button4" value="Save" class="save" onclick="save_row('4')">
+                            <input type="button" value="Delete" class="delete" onclick="delete_row('4')">
+                        </td>
+                    </tr>
 
-                <tr id="row5">
-                    <td class="count"></td>
-                    <td id="name_row5">user2</td>
-                    <td id="roll_row5">21</td>
-                    <td id="address_row5">Delhi</td>
-                    <td>
-                        <input type="button" id="edit_button5" value="Edit" class="edit" onclick="edit_row('5')">
-                        <input type="button" id="save_button5" value="Save" class="save" onclick="save_row('5')">
-                        <input type="button" value="Delete" class="delete" onclick="delete_row('5')">
-                    </td>
-                </tr>
+                    <tr id="row5">
+                        <td class="count"></td>
+                        <td id="name_row5">user2</td>
+                        <td id="roll_row5">21</td>
+                        <td id="address_row5">Delhi</td>
+                        <td>
+                            <input type="button" id="edit_button5" value="Edit" class="edit" onclick="edit_row('5')">
+                            <input type="button" id="save_button5" value="Save" class="save" onclick="save_row('5')">
+                            <input type="button" value="Delete" class="delete" onclick="delete_row('5')">
+                        </td>
+                    </tr>
 
-                <tr id="row6">
-                    <td class="count"></td>
-                    <td id="name_row6">user3</td>
-                    <td id="roll_row6">25</td>
-                    <td id="address_row6">Kolkata</td>
-                    <td>
-                        <input type="button" id="edit_button6" value="Edit" class="edit" onclick="edit_row('6')">
-                        <input type="button" id="save_button6" value="Save" class="save" onclick="save_row('6')">
-                        <input type="button" value="Delete" class="delete" onclick="delete_row('6')">
-                    </td>
-                </tr>
+                    <tr id="row6">
+                        <td class="count"></td>
+                        <td id="name_row6">last user</td>
+                        <td id="roll_row6">25</td>
+                        <td id="address_row6">Kolkata</td>
+                        <td>
+                            <input type="button" id="edit_button6" value="Edit" class="edit" onclick="edit_row('6')">
+                            <input type="button" id="save_button6" value="Save" class="save" onclick="save_row('6')">
+                            <input type="button" value="Delete" class="delete" onclick="delete_row('6')">
+                        </td>
+                    </tr>
+                </tbody>
 
-                <tr>
-                    <td class="count" id="s_no"></td>
-                    <td><input type="text" id="new_name"></td>
-                    <td><input type="text" id="new_roll"></td>
-                    <td><input type="text" id="new_address"></td>
-                    <td><input type="button" class="add" onclick="add_row();" value="Add Student Data"></td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td class="count" id="s_no"></td>
+                        <td><input type="text" id="new_name"></td>
+                        <td><input type="text" id="new_roll"></td>
+                        <td><input type="text" id="new_address"></td>
+                        <td><input type="button" class="add" onclick="add_row();" value="Add Student Data"></td>
+                    </tr>
+                </thead>
 
             </table>
         </div>
     </div>
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="paging.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#data_table').paging({ limit: 5 });
+        });
+    </script>
 </body>
 
 </html>
