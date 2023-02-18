@@ -134,9 +134,7 @@ h3{
                             <input type="button" value="Delete" class="delete" onclick="delete_row('6')">
                         </td>
                     </tr>
-                </tbody>
-
-                <thead>
+               
                     <tr>
                         <td class="count" id="s_no"></td>
                         <td><input type="text" id="new_name"></td>
@@ -144,20 +142,13 @@ h3{
                         <td><input type="text" id="new_address"></td>
                         <td><input type="button" class="add" onclick="add_row();" value="Add Student Data"></td>
                     </tr>
-                </thead>
-
+                </tbody>
             </table>
         </div>
     </div>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="paging.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#data_table').paging({ limit: 5 });
-        });
-    </script>
 </body>
 
 </html>
